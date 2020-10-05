@@ -8,11 +8,12 @@ import json
 
 #For help command
 cmd1="help<page>";cmd2="doge";cmd3="ping";cmd4="kill <name>";cmd5="time";cmd6="calc <x><operator><y>";cmd7="pokechart";cmd8="wiki <search term>";cmd9="ki";cmd10="ship";cmd11="bg";cmd12="meme"
-cmd13="dice";cmd14="num <min> <max>";cmd15="waifu";cmd16="spam <user> <amount> <msg>";cmd17="anon <user> <message>";cmd18="shout <message>";cmd19="rps <choice>";
+cmd13="dice";cmd14="num <min> <max>";cmd15="waifu";cmd16="spam <user> <amount> <msg>";cmd17="anon <user> <message>";cmd18="shout <message>";cmd19="rps <choice>";cmd20="link"
 des1="You're already here!";des2="Displays a friendly doge.";des3="Finds latency of bot.";des4="Kills a person of your choice.";des5="Displays the current time.(24hour format)"
 des6="Does math for you.(Currently toggled off)";des7="Displays a chart of pokemon types.";des8="Finds wikipedia summaries.";des9="Just a pretty ki command.";des10="Displays a random ship."
 des11="Displays a nice view.";des12="Displays a random meme template.";des13="Rolls a standard 6-sided dice.";des14="Displays number between <min> & <max>."
 des15="Displays a random waifu **uwu**";des16="Spams a person of your choice?";des17="Anonymously DMs a person of your choice.";des18="Makes your message stand out.";des19="Plays Rock Paper Scissors against me!"
+des20="Sends the invite link for this bot."
 #defaultans
 ans = ["Badaki!","Kiiii!!","Ohpeee!","I hate this now!!!","This is illegal!!"]
 
@@ -54,8 +55,8 @@ async def _help2(ctx):
         title="Help(2)",
         description="Type %help1 for more commands."
     )
-    embed.add_field(name="Command:",value=f"{cmd13}\n{cmd14}\n{cmd15}\n{cmd16}\n{cmd17}\n{cmd18}\n{cmd19}")
-    embed.add_field(name="Description:",value=f"{des13}\n{des14}\n{des15}\n{des16}\n{des17}\n{des18}\n{des19}")
+    embed.add_field(name="Command:",value=f"{cmd13}\n{cmd14}\n{cmd15}\n{cmd16}\n{cmd17}\n{cmd18}\n{cmd19}\n{cmd20}")
+    embed.add_field(name="Description:",value=f"{des13}\n{des14}\n{des15}\n{des16}\n{des17}\n{des18}\n{des19}\n{des20}")
     await ctx.send(embed=embed)
 #command2//doge
 @client.command()
@@ -216,6 +217,10 @@ async def _rps(ctx, rpschoice):
         await ctx.send("Oh no! I lost!")
     else:
         await ctx.send("**Invalid Request!**\nPlease input \"Rock\",\"Paper\", or\"Scissors\".")
+#command20//link
+@client.command(aliases = ["getlink","botlink","link","url","geturl","boturl","invitebot"])
+async def _link(ctx):
+    await ctx.send("***Bot Invite Link:\n***https://discord.com/api/oauth2/authorize?client_id=708053835704172574&permissions=10240&scope=bot ")
 
 gettoken = open("token.txt","r")
 token = gettoken.read()
