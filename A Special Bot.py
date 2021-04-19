@@ -4,7 +4,6 @@ import random
 import datetime
 import wikipedia
 import time
-import json
 
 #For help command
 cmd1="help<page>";cmd2="doge";cmd3="ping";cmd4="kill <name>";cmd5="time";cmd6="calc <x><operator><y>";cmd7="pokechart";cmd8="wiki <search term>";cmd9="ki";cmd10="ship";cmd11="bg";cmd12="meme"
