@@ -174,14 +174,14 @@ async def _num(ctx,num1,num2):
 #command15//waifu
 @client.command(aliases = ["waifu","anime"])
 async def _waifu(ctx):
-    waifus = open("Waifus.txt","r")
+    waifus = open("waifus.txt","r")
     waifucontent = waifus.read()
     waifusplit = waifucontent.split("\n")
     randwaifu = random.choice(waifusplit)
     embed = discord.Embed()
     embed.set_image(url=str(randwaifu))
     await ctx.send(embed=embed)
-    bg.close()
+    waifus.close()
 #command16//spam
 @client.command()
 async def spam(ctx, foo, amount, foo2):
